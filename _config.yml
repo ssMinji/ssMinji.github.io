@@ -1,10 +1,9 @@
-title: kakao 기술 블로그
-email: opensource@kakaocorp.com
+title: Developing love in developing
+email: ssong758@gmail.com
 description: |
-  Connect Everything 새로운 연결, 새로운 세상.
-  연결의 혁신으로 세상은 더욱 가깝고 새로워진다고 카카오는 믿습니다.
+  I learn something everyday. 
 baseurl: ''
-url: 'http://tech.kakao.com'
+url: 'http://github.com/ssMinji'
 timezone: Asia/Seoul 
 
 repository: ssMinji/ssMinji.github.io
