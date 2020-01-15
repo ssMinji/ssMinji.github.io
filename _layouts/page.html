@@ -1,31 +1,16 @@
 ---
 layout: default
 ---
+<div id="cover" class="container-fluid"
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description | newline_to_br }}</p>
+    </div>
+</div>
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-  <header id="main" style="background-image: url('{{ page.feature-img | relative_url }}')">
-    <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title">
-        {{ page.title }}
-    </h1>
-    
-    {% if page.subtitle %}
-    <h2 class="subtitle">{{ page.subtitle }}</h2>
-    {% endif %}
-      
-  </header>
-  <section class="post-content">
-  {% if page.bootstrap %}
-  <div class="bootstrap-iso">
-  {% endif %}
-	{{ content }}
-  {% if page.bootstrap %}
-  </div>
-  {% endif %}
-  </section>
-    
-    
-  <!-- Tag list for portfolio -->
-  {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
-  {% include tags_list.html tags=tag_list %}
-    
-</article>
+<div id="content" class="container">
+    <div id="post-content" class="post page" role="main">
+        {{ content }}
+    </div>
+</div>
