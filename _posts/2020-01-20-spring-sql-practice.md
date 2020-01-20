@@ -68,9 +68,7 @@ STEP 6. Client 화면 구현 (.jsp)
     	/* 직원 정보 Select */
     	public List<HashMap<String, Object>> selectEmpInfo(EmpVO empVO) throws Exception;
     }
-    ```
-
-    
+    ```    
 
 4. EmpService.java
 
@@ -125,8 +123,6 @@ STEP 6. Client 화면 구현 (.jsp)
     }
     ```
 
-    
-
 5. EmpController.java
 
     ```java
@@ -171,8 +167,6 @@ STEP 6. Client 화면 구현 (.jsp)
     
     }
     ```
-
-    
 
 6. emp_info.jsp
 
