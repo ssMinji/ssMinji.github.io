@@ -1,7 +1,4 @@
----
-layout: post
-title: "Spring + SQL + Jsp 이용한 간단한 테이블 조회 페이지 만들기"
----
+# Spring
 
 만약, sql db상에 직원 정보가 담긴 Emp 테이블이 있다고 하자. Emp 테이블은 직원의 ID와 이름을 담고 있으며, 이를 모두 조회해 보여주는 간단한 화면을 만든다고 가정하자.
 
@@ -43,7 +40,6 @@ STEP 6. Client 화면 구현 (.jsp)
     }
     ```
     
-
 2. EmpDAO.xml
 
     ```xml
@@ -64,196 +60,196 @@ STEP 6. Client 화면 구현 (.jsp)
     </mapper>
     ```
 
-    
-
 3. EmpDAO.java
 
-```java
-public interface EmpDAO {
+    ```java
+    public interface EmpDAO {
+    
+    	/* 직원 정보 Select */
+    	public List<HashMap<String, Object>> selectEmpInfo(EmpVO empVO) throws Exception;
+    }
+    ```
 
-	/* 직원 정보 Select */
-	public List<HashMap<String, Object>> selectEmpInfo(EmpVO empVO) throws Exception;
-}
-```
-
-
+    
 
 4. EmpService.java
 
-```java
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.fds.card.emp.dao.EmpDAO;
-import com.fds.vo.EmpVO;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-@Service
-public class EmpService {
-
-    @Autowired
-    EmpDAO empDAO;
-
-    /* 직원 정보 Select */
-    public List<EmpVO> selectEmpInfo(EmpVO empVO) throws Exception {
-        List<HashMap<String, Object>> daoResultList = empDAO.selectEmpInfo(empVO);
-        System.out.println("result of selectEmpInfo" + daoResultList);
-
-        List<EmpVO> serviceResultList = createEmpList(daoResultList);
-        return serviceResultList;
-    }
-
-    private ArrayList<EmpVO> createEmpList(List<HashMap<String, Object>> resultList) {
-
-         ArrayList<EmpVO> arrayListEmpVO = new ArrayList<EmpVO>();
-
-        for (HashMap<String, Object> tempMap : resultList) {
-            // 필요 변수 초기화
-            EmpVO empVO = new EmpVO();
-
-            // 초기 값 할당
-            empVO.setEmpID(String.valueOf(tempMap.get("EMP_ID")));
-            empVO.setEmpNM(String.valueOf(tempMap.get("EMP_NM")));
-
-            // arrayListEmp에 객체 추가
-            arrayListEmpVO.add(empVO);
+    ```java
+    import java.util.ArrayList;
+    import java.util.Arrays;
+    import java.util.HashMap;
+    import java.util.List;
+    import java.util.Map;
+    
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    
+    import com.fds.card.emp.dao.EmpDAO;
+    import com.fds.vo.EmpVO;
+    import com.google.gson.Gson;
+    import com.google.gson.GsonBuilder;
+    
+    @Service
+    public class EmpService {
+    
+        @Autowired
+        EmpDAO empDAO;
+    
+        /* 직원 정보 Select */
+        public List<EmpVO> selectEmpInfo(EmpVO empVO) throws Exception {
+            List<HashMap<String, Object>> daoResultList = empDAO.selectEmpInfo(empVO);
+            System.out.println("result of selectEmpInfo" + daoResultList);
+    
+            List<EmpVO> serviceResultList = createEmpList(daoResultList);
+            return serviceResultList;
         }
-
-        return arrayListEmpVO;
+    
+        private ArrayList<EmpVO> createEmpList(List<HashMap<String, Object>> resultList) {
+    
+             ArrayList<EmpVO> arrayListEmpVO = new ArrayList<EmpVO>();
+    
+            for (HashMap<String, Object> tempMap : resultList) {
+                // 필요 변수 초기화
+                EmpVO empVO = new EmpVO();
+    
+                // 초기 값 할당
+                empVO.setEmpID(String.valueOf(tempMap.get("EMP_ID")));
+                empVO.setEmpNM(String.valueOf(tempMap.get("EMP_NM")));
+    
+                // arrayListEmp에 객체 추가
+                arrayListEmpVO.add(empVO);
+            }
+    
+            return arrayListEmpVO;
+        }
     }
-}
-```
+    ```
 
+    
 
 5. EmpController.java
 
-```java
-@Controller
-@RequestMapping(value = "/emp/info")
-public class EmpController extends AbstractBaseControlller {
-    Logger log = LoggerFactory.getLogger(EmpController.class);
-
-    private static final String JSP_PREFIX = "emp/info/";
-
-    @Autowired
-    EmpService empService;
-
-    @RequestMapping(value = "/goMaster.go")
-    public String goBaseMerchant(@ModelAttribute("empVO") EmpVO empVO, HttpServletRequest request, HttpServletResponse response) {
-
-        return JSP_PREFIX + "emp_info"; // 경로 내 emp_info.jsp파일로 연결
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/doSelectEmp.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
-    public String doSelectEmpInfo(HttpServletRequest request, HttpServletResponse response) {
-
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();	
-        List<EmpVO> resultList = null;
-
-        EmpVO empVO = new EmpVO();
-        empVO.getEmpID();
-        empVO.getEmpNM();
-
-        try {			
-
-            resultList = empService.selectEmpInfo(empVO);			
-
-            return gson.toJson(resultList);
-
-        } catch (Exception e) {
-            log.debug("controller error  : " + e);
-            e.printStackTrace();
-            return "error";
+    ```java
+    @Controller
+    @RequestMapping(value = "/emp/info")
+    public class EmpController extends AbstractBaseControlller {
+        Logger log = LoggerFactory.getLogger(EmpController.class);
+    
+        private static final String JSP_PREFIX = "emp/info/";
+    
+        @Autowired
+        EmpService empService;
+    
+        @RequestMapping(value = "/goMaster.go")
+        public String goBaseMerchant(@ModelAttribute("empVO") EmpVO empVO, HttpServletRequest request, HttpServletResponse response) {
+    
+            return JSP_PREFIX + "emp_info"; // 경로 내 emp_info.jsp파일로 연결
         }
+    
+        @ResponseBody
+        @RequestMapping(value = "/doSelectEmp.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
+        public String doSelectEmpInfo(HttpServletRequest request, HttpServletResponse response) {
+    
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();	
+            List<EmpVO> resultList = null;
+    
+            EmpVO empVO = new EmpVO();
+            empVO.getEmpID();
+            empVO.getEmpNM();
+    
+            try {			
+    
+                resultList = empService.selectEmpInfo(empVO);			
+    
+                return gson.toJson(resultList);
+    
+            } catch (Exception e) {
+                log.debug("controller error  : " + e);
+                e.printStackTrace();
+                return "error";
+            }
+    
+    }
+    ```
 
-}
-```
-
+    
 
 6. emp_info.jsp
 
-```java
-<%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%
-	response.setHeader("Cache-Control", "no-cache");
-	response.setHeader("Pragma", "no-cache");
-	response.setDateHeader("Expires", 0);
-%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content=""/>
-<meta name="author" content=""/>
-<script src="/common/js/plugins/proj4/lib/proj4js-combined.js"></script>
-
-
-<title>EMP INFO</title>
-<script type="text/javascript">
-
-
-function loadEmpData() {
-	var result = null;
-
-	$.ajax({
-		type : "get",
-		url : "/emp/info/doSelectEmpInfo.do",
-		async : true,
-		/* data : json_params, */
-		beforeSend : function() {
-			$.blockUI({
-				message : "<h2><img src='/common/img/loader.gif' /> loading... </h2>",
-				css : {
-					backgroundColor : "rgba(0,0,0,0.0)",
-					color : "#000000",
-					border : "0px solid #a00"
-				},
-				timeout : 600000
-			});
-		},
-		success : function(data, status) {
-			if (status != "success") {
-				alert("Not Found");
-				return;
-			}
-			console.log(data);
-			
-			result = JSON.parse(data); // 결과 저장
-			
-			console.log(result);
-
-			// jqgrid 세팅 --- 만약, 테이블 형식으로 뷰 구현한다면.
-			setEmpGrid(result);
-			$.unblockUI();
-		},
-		error : function(request, status, error) {
-			alert("error!!! " + error);
-			console.log(request, status);
-			$.unblockUI();
-		},
-	});
-
-	return result;
-}
-</script>
-</head>
-<body>
-// html 활용해 화면 구현 
-</body>
-```
+    ```java
+    <%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8"%>
+    <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <%
+    	response.setHeader("Cache-Control", "no-cache");
+    	response.setHeader("Pragma", "no-cache");
+    	response.setDateHeader("Expires", 0);
+    %>
+    
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <script src="/common/js/plugins/proj4/lib/proj4js-combined.js"></script>
+    
+    
+    <title>EMP INFO</title>
+    <script type="text/javascript">
+    
+    
+    function loadEmpData() {
+    	var result = null;
+    
+    	$.ajax({
+    		type : "get",
+    		url : "/emp/info/doSelectEmpInfo.do",
+    		async : true,
+    		/* data : json_params, */
+    		beforeSend : function() {
+    			$.blockUI({
+    				message : "<h2><img src='/common/img/loader.gif' /> loading... </h2>",
+    				css : {
+    					backgroundColor : "rgba(0,0,0,0.0)",
+    					color : "#000000",
+    					border : "0px solid #a00"
+    				},
+    				timeout : 600000
+    			});
+    		},
+    		success : function(data, status) {
+    			if (status != "success") {
+    				alert("Not Found");
+    				return;
+    			}
+    			console.log(data);
+    			
+    			result = JSON.parse(data); // 결과 저장
+    			
+    			console.log(result);
+    
+    			// jqgrid 세팅 --- 만약, 테이블 형식으로 뷰 구현한다면.
+    			setEmpGrid(result);
+    			$.unblockUI();
+    		},
+    		error : function(request, status, error) {
+    			alert("error!!! " + error);
+    			console.log(request, status);
+    			$.unblockUI();
+    		},
+    	});
+    
+    	return result;
+    }
+    </script>
+    </head>
+    <body>
+    // html 활용해 화면 구현 
+    </body>
+    ```
 
 
 - Conclusion
