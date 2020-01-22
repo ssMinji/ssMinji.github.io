@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mybatis 개념 정리"
+title: "[Mybatis] Mybatis 개념 정리"
 ---
 
 - [Spring] mapper 이용한 XML을 이용한 쿼리 실행

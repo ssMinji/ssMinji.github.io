@@ -1,3 +1,8 @@
+---
+layout: post
+title: "[Spring] Spring + SQL + JSP를 활용해 간단한 데이터 조회 페이지 만들기"
+---
+
 # Spring
 
 만약, sql db상에 직원 정보가 담긴 Emp 테이블이 있다고 하자. Emp 테이블은 직원의 ID와 이름을 담고 있으며, 이를 모두 조회해 보여주는 간단한 화면을 만든다고 가정하자.

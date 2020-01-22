@@ -1,3 +1,8 @@
+---
+layout: post
+title: "[기본개념] Boolean 쉬운 설명"
+---
+
 ## Boolean
 
 
