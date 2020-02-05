@@ -31,7 +31,7 @@ def fib(n):
 
 우리는 이 함수의 재귀호출을 트리 형태로 상상해볼 수 있다. 노드의 두 자식들이 노드가 만들어내는 두 재귀호출이 되는 것이다. 우리는 트리가 걷잡을 수 없이 빠르게 가지를 뻗어가는 것을 볼 수 있다. 
 
-<img width="410" alt="recursionTree" src="https://user-images.githubusercontent.com/44194800/73815909-adcde680-482a-11ea-8674-6b09dccf324a.PNG">
+<img width="410" alt="" src="https://user-images.githubusercontent.com/44194800/73815909-adcde680-482a-11ea-8674-6b09dccf324a.PNG">
 
 이렇게 가지를 뻗어나감으로써 발생되는 반복 작업을 피하기 위해서는, 입력값을 출력값과 매핑해주는 ```memo``` 라는 속성을 가진 클래스로 함수를 감싸야한다. 
 
@@ -73,7 +73,7 @@ class Fibber(object):
 
 이제 우리의 재귀 트리에서, 노드는 두 번 이상 나타나지 않는다 .
 
-<img width="410" alt="recursionTree2" src="https://user-images.githubusercontent.com/44194800/73816764-c8a15a80-482c-11ea-8636-182db7a66ccd.PNG">
+<img width="410" alt="" src="https://user-images.githubusercontent.com/44194800/73816764-c8a15a80-482c-11ea-8636-182db7a66ccd.PNG">
 
 Memoization(메모이제이션)은 **dynamic programming(동적 계획법)** 문제를 풀 때 흔히 쓰이는 방법이다. 동적 계획법이란 문제의 정답이, 입력값의 더 작은 부분에 대해 동일한 문제의 정답으로 구성되어 있는(마치 위에서 설명한 피보나치 같은 문제) 문제를 의미한다. 동적 계획법 문제를 풀기 위한 또다른 일반적인 방법은 **Bottom-up**이 있는데, 보통 이것이 더 깔끔하고 더 효율적이다. 
 
