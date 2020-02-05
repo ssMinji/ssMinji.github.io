@@ -34,7 +34,9 @@ def fib(n):
 우리는 이 함수의 재귀호출을 트리 형태로 상상해볼 수 있다. 노드의 두 자식들이 노드가 만들어내는 두 재귀호출이 되는 것이다. 우리는 트리가 걷잡을 수 없이 빠르게 가지를 뻗어가는 것을 볼 수 있다. 
 
 
-<img src='{{ "../assets/images/post/recursionTree.png" | relative_url }}' alt='recursionTree'>
+<img src="../assets/images/post/recursionTree.png" alt='recursionTree' />
+
+
 
 
 
