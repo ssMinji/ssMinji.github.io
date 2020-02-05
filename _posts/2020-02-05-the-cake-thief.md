@@ -35,7 +35,7 @@ def fib(n):
 
 
 <img src="../assets/images/post/recursionTree.png" alt='recursionTree' />
-
+![test](/assets/images/post/recursionTree.png)
 
 
 
