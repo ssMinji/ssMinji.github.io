@@ -7,7 +7,7 @@ sitemap: yes
 tags: [about]
 ---
 
-Minji's blog.
+Minji Song.
 
-Powered by [GitHub Pages](https://pages.github.com) and [Jekyll](https://jekyllrb.com).
+GitHub Pages: [](https://github.com/ssMinji) 
 
