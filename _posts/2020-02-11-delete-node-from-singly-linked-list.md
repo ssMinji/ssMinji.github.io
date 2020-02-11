@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[알고리즘] 중복 하위문제(Overlapping Subproblem)"
-tags: [algorithm, fibonacci, subproblem]
-date: 2020-02-07 17:13:23
+title: "[자료구조] 링크드리스트(Singly Linked list)"
+tags: [Linkedlist, Node]
+date: 2020-02-11 18:00:03
 ---
 
 ### 노드를 가리키는 변수만 주어졌을 때 링크드리스트에서 노드 삭제하기
