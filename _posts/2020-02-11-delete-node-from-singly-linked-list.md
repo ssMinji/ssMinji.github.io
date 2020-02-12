@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[자료구조] 링크드리스트(Singly Linked list)"
+title: "[자료구조] 링크드리스트(Singly Linked list) 노드 삭제하기"
 tags: [Linkedlist, Node]
 date: 2020-02-11 18:00:03
 ---
