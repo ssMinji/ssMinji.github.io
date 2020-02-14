@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "[알고리즘] 문제)도둑맞은 아침 배달 드론"
+tags: [algorithm, beatOperation]
+date: 2020-01-28 16:00
 ---
 
 ### 도둑맞은 아침 배달 드론!
