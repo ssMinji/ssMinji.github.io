@@ -1,6 +1,8 @@
 ---
 layout: post
-title: "[jQuery]] disabled 속성 설정, 해제, 체크"
+title: "[jQuery] disabled 속성 설정, 해제, 체크"
+tags: [jQuery, css]
+date: 2020-02-04 13:36
 ---
 
 ### [jQuery] disabled 속성 설정, 해제, 체크
