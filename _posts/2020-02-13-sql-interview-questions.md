@@ -1,3 +1,10 @@
+---
+layout: post
+title: "[SQL] SQL 인터뷰 예상질문"
+tags: [SQL, query optimization, MySQL]
+date: 2020-02-13 18:08
+---
+
 #### 스키마
 
 ------
