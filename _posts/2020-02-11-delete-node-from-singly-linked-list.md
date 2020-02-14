@@ -2,7 +2,7 @@
 layout: post
 title: "[자료구조] 링크드리스트(Singly Linked list) 노드 삭제하기"
 tags: [Linkedlist, Node]
-date: 2020-02-11 18:00:03
+date: 2020-02-11 18:00
 ---
 
 ### 노드를 가리키는 변수만 주어졌을 때 링크드리스트에서 노드 삭제하기
