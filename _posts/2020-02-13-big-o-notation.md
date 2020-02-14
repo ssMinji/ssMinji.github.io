@@ -2,7 +2,7 @@
 layout: post
 title: "[알고리즘] 빅 오 표기법(Big O notation)"
 tags: [Algorithm, BigO, optimization, complexity] 
-date: 2020-02-13 15:37:08
+date: 2020-02-13 15:37
 ---
 
 ### 빅 오 표기법(Big O Notation)
