@@ -2,7 +2,7 @@
 layout: post
 title: "[알고리즘] Memoization(메모이제이션) 꿀이해"
 tags: [algorithm, memoization, dynamic-programming]
-date: 2020-02-05 14:36:46
+date: 2020-02-05 14:36
 ---
 
 ### Memoization(메모이제이션)
