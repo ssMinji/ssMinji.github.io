@@ -2,7 +2,7 @@
 layout: post
 title: "[알고리즘] 중복 하위문제(Overlapping Subproblem)"
 tags: [algorithm, fibonacci, subproblem]
-date: 2020-02-07 17:13:23
+date: 2020-02-07 17:13
 ---
 
 ### 중복 하위 문제(Overlapping Subproblems )
