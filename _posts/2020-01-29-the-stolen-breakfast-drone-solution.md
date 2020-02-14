@@ -2,7 +2,7 @@
 layout: post
 title: "[알고리즘] 해설)도둑맞은 아침 배달 드론"
 tags: [algorithm, beatOperation]
-date: 2020-01-29 17:00:24
+date: 2020-01-29 17:00
 ---
 
 ### 도둑맞은 아침 배달 드론! -- 해설
