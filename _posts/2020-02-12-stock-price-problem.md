@@ -2,7 +2,7 @@
 layout: post
 title: "[알고리즘] 주식거래에서 최대 이익 계산하기 문제!(feat.그리디 방식)"
 tags: [Greedy, Algorithm]
-date: 2020-02-12 17:23:17
+date: 2020-02-12 17:23
 ---
 
 #### Apple 주식을 사고 팔 때 최대의 이익을 얻을 수 있는 경우 찾기 
