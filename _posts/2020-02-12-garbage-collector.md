@@ -2,7 +2,7 @@
 layout: post
 title: "[기본개념] 가비지 콜렉터(Garbage Collector)"
 tags: [Garbage Collector, Python, C, C++, Tracing garbage collection,       reference counting]
-date: 2020-02-12 10:41:06
+date: 2020-02-12 10:41
 ---
 
 ### Garbage Collector(가비지 콜렉터)
