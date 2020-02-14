@@ -2,7 +2,7 @@
 layout: post
 title: "[기본개념] RAM 꿀이해"
 tags: [Computer Science, RAM, Memory]
-date: 2020-02-13 13:09:17
+date: 2020-02-13 13:09
 ---
 
 ### Random Access Memory(RAM)
