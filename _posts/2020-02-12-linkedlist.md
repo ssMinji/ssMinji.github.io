@@ -2,7 +2,7 @@
 layout: post
 title: "[자료구조] 링크드리스트(Linked List)"
 tags: [LinkedList, doubly linkedlist, singly linkedlist]
-date: 2020-02-12 11:29:41
+date: 2020-02-12 11:29
 ---
 
 ### 링크드리스트(Linkedlist)
