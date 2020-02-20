@@ -9,5 +9,5 @@ tags: [about]
 
 Minji Song.
 
-GitHub Pages: [Visit My Github](https://github.com/ssMinji) 
+GitHub Pages: [https://github.com/ssMinji](https://github.com/ssMinji) 
 
