@@ -199,7 +199,9 @@ for small screen(<720px):
     height: 60px;
     margin: 0 0;
     padding: 0;
-    background: url(../images/pc/logo.png) no-repeat center;
+    border-style: none;
+    background-color: white;
+    /* background: url(../images/pc/logo.png) no-repeat center; */
     background-size: 123px 21px;
 }
 
@@ -413,7 +415,7 @@ for small screen(<720px):
     position: relative;
     vertical-align: middle;
     text-align: center;
-    /* background-color: rgba(12, 12, 48, 0.3); */
+    background-color: #f4c2c2;
     overflow: hidden;
     z-index: 2;
 }
@@ -740,12 +742,12 @@ body.home-template {
 
 body.home-template #cover,
 body.archive-template #cover,
-body.page-template #cover {
+/* body.page-template #cover {
     height: 460px;
-}
+} */
 
 body.home-template #cover {
-    background-image: url(../images/default_blog_cover.jpg);
+    background-color: #f4c2c2;
 }
 
 body.post-template #cover {
@@ -753,7 +755,7 @@ body.post-template #cover {
 }
 
 body.page-template #cover {
-    background-image: url(../images/default_page_cover.jpg);
+    background-color: #a1caf1;
 }
 
 body.author-template #cover {
@@ -1199,7 +1201,8 @@ body.page-template {
         top: 0;
         height: 50px;
         margin: 0 auto;
-        /*background-image: url(../images/mo/minji_logo.png);*/
+        border-style: none;
+        /* background-image: url(../images/mo/minji_logo.png); */
         background-size: 99px 17px;
     }
 

@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-<div id="cover" class="container-fluid"
-     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+<div id="cover" class="sidenav">
     <div>
         <h1>{{ page.title }}</h1>
         <p>{{ page.description | newline_to_br }}</p>
@@ -13,15 +12,4 @@ layout: default
     <div id="post-content" class="post page" role="main">
         {{ content }}
     </div>
-</div> 
-
-<!-- <div>
-<article class="page" role="article">
-    <header style="margin-bottom:2rem">
-        <h1 class="page-title">{{ page.title }}</h1>
-        {{ page.description }}
-    </header>
-
-    {{ content }}
-</article>
-</div> -->
+</div>  

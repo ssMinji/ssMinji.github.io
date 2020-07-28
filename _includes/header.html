@@ -5,10 +5,12 @@
     <button id="search-toggle" type="button">
         <span class="sr-only">Toggle Search Form</span>
     </button>
-    <a id="logo" href="/">
-        Minji's blog
-        <!--<span class="sr-only">Minji's blog</span>-->
-    </a>
+    <div id="mainLogo" style="align-content: center;">
+        <button id="logo" onclick = "location.href = '/' ">
+            <span>Minji's blog</span>
+        </button>
+    </div>
+
     <div id="search">
         <input id="search-input" type="search" placeholder="Search..." value="" />
     </div>
@@ -33,5 +35,5 @@
         fuzzy: false,
         exclude: ['Welcome']
     })
-</script><!-- #header -->
+</script>
 
