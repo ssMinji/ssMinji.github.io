@@ -1,0 +1,8 @@
+deploy:
+  - type: git
+    repo: https://github.com/ssMinji/ssMinji.github.io.git
+    branch: master
+    ignore_hidden: false
+
+include:
+  - .nojekyll
