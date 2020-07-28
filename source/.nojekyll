@@ -1,6 +1,6 @@
 deploy:
   - type: git
-    repo: https://github.com/ssMinji/ssMinji.github.io.git
+    repo: https://github.com/ssMinji/ssMinji.github.io
     branch: master
     ignore_hidden: false
 
