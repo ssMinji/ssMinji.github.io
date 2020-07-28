@@ -1,36 +1,42 @@
-<div id="header">
-    <button id="menu-toggle" type="button">
-        <span class="sr-only">Toggle Navigation Menu</span>
-    </button>
-    <button id="search-toggle" type="button">
-        <span class="sr-only">Toggle Search Form</span>
-    </button>
-    <a id="logo" href="/">
-        Minji's blog
-        <!--<span class="sr-only">Minji's blog</span>-->
-    </a>
-    <div id="search">
-        <input id="search-input" type="search" placeholder="Search..." value="" />
+<div id="_yDrawer">
+    <div id="_sidebar" class="sidebar">
+      <div class="sidebar-bg" {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}></div>
+      <header class="sidebar-sticky" role="banner">
+        <br/>
+        <div class="sidebar-about">
+          <h1><a id="_title" href="{{ '/' | relative_url }}">{{ page.title }}</a></h1>
+          {{ page.description | truncatewords:50 | markdownify }}
+        </div>
+  
+        <br/>
+        <br/>
+        <!-- <nav class="sidebar-nav heading" role="navigation">
+          {% include nav.html %}
+        </nav>
+      <br/>
+  
+      <form action="/search">
+        <div class="tipue_search_left">
+          <img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon">
+        </div>
+        <div class="tipue_search_right">
+          <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required></div>
+        <div style="clear: both;"></div>
+      </form>
+  
+      <br/>
+        <div class="sidebar-box">
+          {% if author.picture %}
+            {% include srcset-img.html class="me" img=author.picture alt=author.name %}
+          {% endif %}
+        </div>
+        {{ site.description | truncatewords:50 | markdownify }}
+        {% assign author = site.data.authors.first[1] %}
+        {% if author.social %}
+          <div class="sidebar-social">
+            {% include social.html social=author.social %}
+          </div>
+        {% endif %} -->
+      </header>
     </div>
-    <ul class="search__results" id="results-container"></ul>
-
-    <ul id="menu" class="nav">
-        <li class="{% if page.url != '/opensource/' and page.url != '/openapi/' and page.url != '/events/' %} active {% endif %}"><a href="{{ base_path }}/">Post</a></li>
-        <li class="{% if page.url == '/about/' %} active {% endif %}"><a href="{{ base_path }}/about/">About</a></li>
-    </ul>
-</div>
-<!-- Script pointing to jekyll-search.js -->
-<script src="{{site.baseurl}}/dest/jekyll-search.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-    SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search2.json',
-        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: '<li>No results found</li>',
-        limit: 15,
-        fuzzy: false,
-        exclude: ['Welcome']
-    })
-</script><!-- #header -->
+  </div>
