@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "[git] git command 정리"
+title: "[Git] git command 정리"
 tags: [git, version control, git command]
 date: 2021-07-09 10:37
 ---
 
-#### [git] git command 정리
+#### [Git] git command 정리
 ---
 
 뒤돌아서면 까먹는 나를 위해 정리한 Git Command. 
 
-###1. 기초 Git 명령어
+### 1. 기초 Git 명령어
 
 - ``git init``: 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리)를 생성한다. 
 - ``git config user.name 'ssminji'``: 현재 사용자의 아이디를 'ssminji'로 설정한다.(커밋할 때 필요한 정보)
@@ -23,14 +23,14 @@ date: 2021-07-09 10:37
 - ``git commit -m "커밋 메시지"``: 현재 staging area에 있는 것들을 커밋으로 남긴다. 
 - ``git help [커맨드 이름]``: 사용법이 궁금한 Git 커맨드의 공식 메뉴얼 내용을 출력한다. 
 
-###2. Github 사용하기 
+### 2. Github 사용하기 
 
 - ``git push -u(or --set-upstream) origin master``: 로컬 레포지토리의 내용을 처음으로 리모트 레포지토리에 올릴 때 사용한다.
 - ``git push``: 위처럼 upstream을 한 번 설정하고 난 후에는 git push라고만 쳐도 로컬 레포지토리의 내용을 리모트 레포지토리에 올릴 수 있다. 
 - ``git pull``: 리모트 레포지토리의 내용을 로컬 레포지토리로 가져온다. 
 - ``git clone [프로젝트의 github 상 주소]``: Github에 있는 프로젝트를 내 컴퓨터로 가져온다. 
 
-###3. Git에서 커밋 다루기
+### 3. Git에서 커밋 다루기
 
 - ``git log``: 커밋 히스토리를 출력한다. 
 - ``git log --pretty=online``: --pretty 옵션을 사용하면 커밋 히스토리를 다양한 방식으로 출력할 수 있다. --pretty 옵션에 oneline이라는 값을 주면 커밋 하나당 한 줄씩 출력해준다. --pretty 옵션에 대해 더 자세한 설명은 [링크](https://git-scm.com/docs/pretty-formats) 를 따라가면 된다.
@@ -41,11 +41,11 @@ date: 2021-07-09 10:37
 - ``git reset [옵션][커밋 아이디]``: 옵션에 따라 하는 작업이 달라진다.(옵션을 생략하면 ``--mixed`` 옵션이 적용된다)
     - HEAD가 특정 커밋을 가리키도록 이동시킴(``--soft``는 여기까지 수행)
     - staging area도 특정 커밋처럼 리셋(``--mixed``는 여기까지 수행)
-    - working directory도 특정 커밋처럼 리셋(``--hard``는 여기까지 수행)
+    - working directory도 특정 커밋처럼 리셋(``--hard``는 여기까지 수행)  
   그리고 이때 커밋 아이디 대신 HEAD의 위치를 기준으로 한 표기법(ex. HEAD^, HEAD~2)을 사용해도 된다.
 - ``git tag [태그 이름][커밋 아이디]``: 특정 커밋에 태그를 붙임
 
-###4. Git에서 브랜치 사용하기
+### 4. Git에서 브랜치 사용하기
 
 - ``git branch [새 브랜치 이름]``: 새로운 브랜치를 생성한다.
 - ``git checkout -b [새 브랜치 이름]``: 새로운 브랜치를 생성하고 그 브랜치로 바로 이동한다.
@@ -54,7 +54,7 @@ date: 2021-07-09 10:37
 - ``git merge [기존 브랜치 이름]``: 현재 브랜치에 다른 브랜치를 머지한다.
 - ``git merge --abort``: 머지를 하다가 conflict가 발생했을 때, 일단 머지 작업을 취소하고 이전 상태로 돌아간다.
 
-###5. Git 활용하기
+### 5. Git 활용하기
 
 - ``git fetch``: 로컬 레포지토리에서 현재 HEAD가 가리키는 브랜치의 업스트림(upsteam) 브랜치로부터 최신 커밋들을 가져온다.(가져오기만 한다는 점에서, 가져와서 머지까지 하는 git pull과는 차이가 있다)
 - ``git blame``: 특정 파일의 내용 한줄한줄이 어떤 커밋에 의해 생긴 것인지 출력한다. ~~공개처형 가능,,~~
