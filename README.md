@@ -1,11 +1,6 @@
-# 모바일 청첩장 React.js 템플릿
+# 모바일 청첩장 만들기
 
-결혼식 초대를 위한 청첩장 템플릿입니다.  
-이 저장소가 마음에 들거나 사용하게 되신다면, Star와 Fork 부탁드리겠습니다😉
-
-## 👰🏻‍♀️ 미리 보기
-
-https://wedding-templete.netlify.app/
+https://ssminji.github.io
 
 ## 📚 내용 및 기능
 
@@ -16,19 +11,9 @@ https://wedding-templete.netlify.app/
 
 ## 🚘 시작하기
 
-1. `$ cd WEDDING_INVITATION` - 해당 프로젝트 폴더로 이동
-2. `$ npm install` - 디펜던시 설치
-3. `$ npm start` - 로컬로 실행
-
-## 🔧 Netlify로 만들기
-
-Netlify로 만드신다면 아래 글을 참고하세요 🕵🏻‍♂️
-
-[Gatsby 테마로 모바일 결혼 청첩장 만들기](https://joy.pe.kr/gatsby-wedding-deploy/)
-
-## ❌ 오류 발생 시
-
-`rm -rf package-lock.json` 과 `rm -rf node_modules` 후 다시 `npm install` 수행
+1. `$ npm install` - 디펜던시 설치
+2. `$ npm start` - 로컬로 실행
+3. `$ npm deploy` - github 페이지로 배포
 
 ## 🛠 커스터마이징
 
@@ -58,23 +43,3 @@ export const BRIDE_MOTHER_NAME = "○○○";
 export const BRIDE_MOTHER_ACCOUNT_NUMBER = "○○은행 ***-***-******";
 ```
 
-`./src/components/location.jsx`를 수정하여 원하는 위치의 카카오 지도를 사용합니다.
-
-```javascript
-//  1. `https://map.kakao.com/`로 이동
-//  2. 원하는 위치를 검색하여 `HTML 태그 복사`클릭
-//  3. `소스 생성하기`클릭
-//  4. `timestamp,key` 위의 코드에 알맞게 입력
-
-const executeScript = () => {
-  const scriptTag = document.createElement("script");
-  const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
-    "mapWidth" : "640",
-    "mapHeight" : "360"
-  }).render();`);
-  scriptTag.appendChild(inlineScript);
-  document.body.appendChild(scriptTag);
-};
-```
