@@ -47,8 +47,8 @@ const Location = () => {
   const executeScript = () => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
+    "timestamp" : "1705309497375",
+    "key" : "2hoia",
     "mapWidth" : "640",
     "mapHeight" : "360"
   }).render();`);
@@ -99,27 +99,25 @@ const Location = () => {
       </Divider>
       <Image src={Flower} />
       <Map
-        id="daumRoughmapContainer1652464367301"
+        id="daumRoughmapContainer1705309497375"
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
       <Content>
-        대구 수성구 두산동 888-2번지
+        서울 송파구 올림픽로 319(신천동 11-7)
         <br />
-        호텔수성 수성스퀘어 3층 피오니홀
-        <br />
-        <br />
-        <Title>버스 이용시</Title>
+        더컨벤션 잠실(교통회관) 3층 아모르홀
         <br />
         <br />
-        410-1, 401 호텔수성 앞 하차
-        <br />
-        수성1-1, 수성3-1, 814 TBC방송국 앞 하차
+        <Title>지하철</Title>
         <br />
         <br />
-        <Title>지하철 이용시</Title>
+        2호선 잠실역 8번 출구 약 300M / 8호선 잠실역 9번 출구 약 30M
         <br />
         <br />
-        3호선 수성못역 하차 (도보 10분)
+        <Title>주차</Title>
+        <br />
+        <br />
+        교통회관 지상 및 지하 주차장 이용(2시간 무료주차)
       </Content>
     </Wrapper>
   );

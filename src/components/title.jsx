@@ -6,8 +6,7 @@ import {
   GROOM_NAME,
   BRIDE_NAME,
 } from "../../config.js";
-import BackgroundVideo from "../assets/BackgroundVideo.mp4";
-import GroovePaper from "../assets/GroovePaper.png";
+import TitlePhoto from "../assets/title.jpg";
 
 const Layout = styled.div`
   width: 70%;
@@ -27,7 +26,7 @@ const TitleWrapper = styled.div`
   -o-animation: fadein 3s; /* Opera */
 `;
 
-const VideoBackground = styled.video`
+const ImageWrapper = styled.div`
   width: 100%;
 `;
 
@@ -49,6 +48,7 @@ const Schedule = styled.p`
   opacity: 0.65;
   margin-bottom: 24px;
 `;
+
 const Title = () => {
   return (
     <Layout>
@@ -63,9 +63,9 @@ const Title = () => {
           {WEDDING_LOCATION}
         </Schedule>
       </TitleWrapper>
-      <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src={BackgroundVideo} type="video/mp4" />
-      </VideoBackground>
+      <ImageWrapper>
+        <img src={TitlePhoto} />
+      </ImageWrapper>
     </Layout>
   );
 };
