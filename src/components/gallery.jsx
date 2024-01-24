@@ -2,8 +2,9 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
 import styled from "styled-components";
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
-import GalleryPhoto1 from "../assets/gallery1_pre.jpg";
+import GalleryPhoto1 from "../assets/gallery1.jpg";
 import GalleryPhoto2 from "../assets/gallery2.jpg";
 import GalleryPhoto3_1 from "../assets/gallery3_1.jpg";
 import GalleryPhoto3 from "../assets/gallery3.jpg";
@@ -12,7 +13,9 @@ import GalleryPhoto5 from "../assets/gallery5.jpg";
 import GalleryPhoto6 from "../assets/gallery6.jpg";
 import GalleryPhoto7 from "../assets/gallery7.jpg";
 import GalleryPhoto8 from "../assets/gallery8.jpg";
+import GalleryPhoto9_1 from "../assets/gallery9_1.jpg";
 import GalleryPhoto9 from "../assets/gallery9.jpg";
+import GalleryPhoto10_1 from "../assets/gallery10_1.jpg";
 import GalleryPhoto10 from "../assets/gallery10.jpg";
 import GalleryPhoto11 from "../assets/gallery11.jpg";
 import GalleryPhoto12 from "../assets/gallery12.jpg";
@@ -30,6 +33,15 @@ const Title = styled.p`
   font-weight: bold;
   opacity: 0.85;
   margin-bottom: 0;
+  text-align: center;
+`;
+
+const Content = styled.p`
+  font-size: 0.72rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  margin-bottom: 16px;
+  width: 100%;
   text-align: center;
 `;
 
@@ -71,12 +83,20 @@ const images = [
     thumbnail: GalleryPhoto8,
   },
   {
+    original: GalleryPhoto9_1,
+    thumbnail: GalleryPhoto9_1,
+  },
+  {
     original: GalleryPhoto9,
     thumbnail: GalleryPhoto9,
   },
   {
     original: GalleryPhoto10,
     thumbnail: GalleryPhoto10,
+  },
+  {
+    original: GalleryPhoto10_1,
+    thumbnail: GalleryPhoto10_1,
   },
   {
     original: GalleryPhoto11,
@@ -98,6 +118,9 @@ const Gallery = () => {
       <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
         <Title>우리의 아름다운 순간</Title>
       </Divider>
+      <Content>
+        사진 우측 하단 <FullscreenIcon style={{fontSize: "1.2rem"}}/> 클릭 시 확대보기가 가능합니다.
+      </Content>
       <ImageGallery
         showPlayButton={true}
         showFullscreenButton={true}

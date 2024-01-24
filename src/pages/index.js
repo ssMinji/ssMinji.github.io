@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Layout } from "antd";
+import { Calendar, Layout } from "antd";
 import styled from "styled-components";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "antd/dist/antd.css";
