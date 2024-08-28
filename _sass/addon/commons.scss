@@ -689,7 +689,10 @@ $btn-mb: 0.5rem;
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  background: var(--sidebar-bg);
+  // background: var(--sidebar-bg);
+  background: url('/assets/img/profile/sidebar.jpg');
+  background-size: 100% 100%;
+  background-position: center;
   border-right: 1px solid var(--sidebar-border-color);
 
   /* Hide scrollbar for IE, Edge and Firefox */
@@ -750,13 +753,15 @@ $btn-mb: 0.5rem;
       @extend %clickable-transition;
       @extend %sidebar-link-hover;
 
-      color: var(--site-title-color);
+      // color: var(--site-title-color);
+      color: #fffff0;
     }
   }
 
   .site-subtitle {
     font-size: 95%;
-    color: var(--site-subtitle-color);
+    // color: var(--site-subtitle-color);
+    color: #fffff0;
     margin-top: 0.25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
