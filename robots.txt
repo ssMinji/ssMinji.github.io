@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ssminji.github.io/sitemap.xml
