@@ -1,6 +1,6 @@
 ---
 title: MDC를 활용하여 배치 Thread에 로깅하기
-date: 2024-06-01 21:05:00 +09:00
+date: 2023-02-01 21:05:00 +09:00
 categories: [JAVA, Spring batch]
 tags:
   [
