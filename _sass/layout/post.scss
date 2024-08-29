@@ -368,3 +368,12 @@ header {
     margin-right: -0.5rem;
   }
 }
+
+img + em {
+  display: block;
+  text-align: center;
+  text-emphasis: 0;
+  font-size: 0.8em; 
+  font-style: normal; 
+  color: rgba($text-color, 0.75);
+}
