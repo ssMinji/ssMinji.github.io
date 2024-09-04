@@ -25,7 +25,7 @@ du -h --max-depth=1
 du -hs * | sort -rh | head -5
 ```
 폴더별 용량 사용량을 조회해보니 `/snap` 폴더의 사용량이 많았다. 
-![img](/assets/img/blog/blog-2024-09-03.jpg)*/snap 폴더의 사용량이 136M로 확인*
+![img](/assets/img/blog/blog-2024-09-03.png)*/snap 폴더의 사용량이 136M로 확인*
 
 ## 2. Ubuntu에서 스냅(snap) 제거
 ### 1. 현재 snap으로 설치된 패키지 확인

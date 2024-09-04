@@ -60,7 +60,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 ### 3. WORKDIR 
 그럼 멀티스테이지까지 적용했으니 이제 잘 되느냐? 아니다. 위 Dockerfile을 사용해 이미지 빌드 시 `"/build/libs/app.jar": not found` 에러가 발생할 것이다. 왜 빌드 결과물을 찾지 못하는걸까? 이는 docker의 공식 문서를 살펴보면 알 수 있다. 
-![img](/assets/img/blog/blog-2024-06-05.jpg)*[Docker 공식 문서 발췌](https://docs.docker.com/reference/dockerfile/#workdir)*
+![img](/assets/img/blog/blog-2024-06-05.JPG)*[Docker 공식 문서 발췌](https://docs.docker.com/reference/dockerfile/#workdir)*
 요약하자면, `WORKDIR`은 따로 지정하지 않을 때 디폴트로 `/`로 설정이 되나, 사용하고 있는 베이스 이미지에 따라 세팅이 될 수 있기 때문에 `WORKDIR`을 명시적으로 지정하라고 가이드하고 있다. 
 즉, 우리가 `WORKDIR`을 명시하지 않았던 것이 우리가 jar파일이 있을 것이라고 예상한 위치에서 `not found` 에러가 났던 이유라고 추론할 수 있다. 따라서 `WORKDIR`을 `/`로 명시적으로 추가해주면 되고, 최종 파일은 아래와 같다. 
 ## 최종 Dockerfile
