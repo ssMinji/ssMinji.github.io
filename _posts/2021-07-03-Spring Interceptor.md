@@ -86,7 +86,7 @@ public class LogAop {
 ```
 
 ### 다음 글
-[Mybatis Interceptor 적용]()
+[Mybatis Interceptor 적용](https://ssminji.github.io/posts/mybatis-interceptor-%EC%A0%81%EC%9A%A9/)
 
 ### 참고
 - [https://jaehee1007.tistory.com/3](https://jaehee1007.tistory.com/3)
